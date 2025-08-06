@@ -90,7 +90,9 @@ function setupMobileMenu() {
 
 window.addEventListener('load', () => {
     // setupMarquee();
-    animateHeroText();
     setupMobileMenu();
 });
-// window.addEventListener('resize', setupMarquee);
+window.addEventListener('DOMContentLoaded', () => {
+    // setupMarquee();
+    animateHeroText();
+});
