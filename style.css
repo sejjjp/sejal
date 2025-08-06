@@ -121,7 +121,7 @@ header {
     header {
         padding: 0;
     }
-    
+
     .header-container {
         padding: 1.5rem 2rem;
         /* max-width: 1300px; */
@@ -365,6 +365,7 @@ header nav a:hover {
     /* space-x-6 */
     padding-top: 2rem;
     font-size: 0.875rem;
+    width: auto;
 }
 
 .hero-info-item.animate {
@@ -392,6 +393,7 @@ header nav a:hover {
     flex-direction: column;
     gap: 0.5rem;
     opacity: 0;
+    width: 50%;
     /* space-x-2 */
 }
 
@@ -459,14 +461,14 @@ header nav a:hover {
 .marquee-content {
     display: flex;
     white-space: nowrap;
-    animation: marquee-animation 5s linear infinite;
+    animation: marquee-animation 12s linear infinite;
 }
 
 @media (min-width: 640px) {
     .marquee-content {
         display: flex;
         white-space: nowrap;
-        animation: marquee-animation 18s linear infinite;
+        animation: marquee-animation-large 18s linear infinite;
     }
 }
 
@@ -478,13 +480,23 @@ header nav a:hover {
     color: var(--text-primary);
 }
 
-@keyframes marquee-animation {
+@keyframes marquee-animation-large {
     from {
         transform: translateX(0);
     }
 
     to {
         transform: translateX(-150%);
+    }
+}
+
+@keyframes marquee-animation {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-400%);
     }
 }
 
@@ -697,8 +709,10 @@ header nav a:hover {
 }
 
 .footer-icons a:hover {
-    transform: translateY(-3px); /* Add a slight lift effect */
-    color: #c298e9; /* Use an accent color from your hero section */
+    transform: translateY(-3px);
+    /* Add a slight lift effect */
+    color: #c298e9;
+    /* Use an accent color from your hero section */
 }
 
 

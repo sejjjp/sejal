@@ -3,10 +3,9 @@ function animateHeroText() {
     if (!heroSpan) return;
 
     const text = "A passionate UX Designer crafting seamless and engaging digital experiences that are both visually stunning and exceptionally user-friendly.";
+    // Clear any existing content in the hero span
     heroSpan.innerHTML = '';
-
     const words = text.split(/\s+/);
-    console.log(words);
     let charDelay = 0;
 
     words.forEach((word) => {
@@ -96,3 +95,4 @@ window.addEventListener('DOMContentLoaded', () => {
     // setupMarquee();
     animateHeroText();
 });
+// window.addEventListener('resize', setupMarquee);
