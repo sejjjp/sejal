@@ -81,5 +81,5 @@
       port: 3000,
       open: true,
     },
-    base: './sejal',
+    base: '/sejal/',
   });
