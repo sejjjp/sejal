@@ -11,13 +11,14 @@ import { FlowyBackground } from "./components/FlowyBackground";
 import { SmoothScrollHandler } from "./components/SmoothScroll";
 import { PDFViewerModal } from "./components/PDFViewerModal";
 import imgSamsungIris from "figma:asset/d240d9fe427e86989f37f98da4e96de2fa8190d6.png";
-import imgSweetmap from "figma:asset/dc9f24baf6eb75805f6ed4a4e659cf16ffe08342.png";
+import imgFins from "figma:asset/5d470f87e1948326477b8994d8599a467dc80dfa.png";
 import imgMoHFW from "figma:asset/09339eee87f6aadccbaba46a2109de3122ae2dca.png";
 import imgEssentrail from "figma:asset/17308e162270ed8ff61719fad065827130dc362a.png";
 import imgChromify from "figma:asset/f5d28887cb1f0d0767c5c4d29311de55b6af65b2.png";
 import imgJioMart from "figma:asset/89a3b169c18161b3b565d1e4949f65ec3e49fbfd.png";
 import imgSamsungIrisWave from "figma:asset/b0e824ac2079e7c633755621ccff69652e5b1c8b.png";
 import imgDharmikVibesLogo from "figma:asset/473e1227a87653a6bdbf525cb38767c0b58c836f.png";
+import imgFinsFloating from "figma:asset/f56814f9c49b21026ae8c1c3181a6e7f23ca06e0.png";
 
 function DeviconIllustrator({
   className,
@@ -1314,14 +1315,14 @@ function FloatingElements4() {
 function Container29() {
   return (
     <div
-      className="h-[236.79px] relative rounded-[22px] shadow-[0px_25px_50px_-12px_rgba(0,0,0,0.25)] w-[282.399px]"
+      className="h-[236.79px] relative rounded-[22px] shadow-[0px_25px_50px_-12px_rgba(0,0,0,0.25)] w-[282.399px] overflow-hidden"
       data-name="Container"
-      style={{
-        backgroundImage:
-          "linear-gradient(140.02deg, rgb(81, 162, 255) 0%, rgb(194, 122, 255) 50%, rgb(251, 100, 182) 100%)",
-      }}
     >
-      <FloatingElements4 />
+      <img
+        src={imgFinsFloating}
+        alt="FINS: The Agentic Wallet"
+        className="w-full h-full object-cover"
+      />
     </div>
   );
 }
@@ -2694,14 +2695,13 @@ function ProjectsSection({
         "https://drive.google.com/file/d/1iU2AAUHQYKWNWVk5wzA48ZGp535b7LIf/view?usp=drive_link",
     },
     {
-      title: "Sweetmap",
+      title: "FINS: The Agentic Wallet",
       category: "Mobile App Design",
       description:
-        "Discover regional sweets and their stories, one state at a time.",
-      image: imgSweetmap,
-      id: "sweetmap",
-      pdfUrl:
-        "https://drive.google.com/file/d/1iU2AAUHQYKWNWVk5wzA48ZGp535b7LIf/view?usp=drive_link",
+        "Transforming Financial Anxiety into Financial Agency through Calm Technology.",
+      image: imgFins,
+      id: "fins",
+      externalUrl: "https://fins.figma.site/",
     },
     {
       title: "Ministry of Health & Family Welfare",
@@ -2782,7 +2782,14 @@ function ProjectsSection({
               <ProjectCard
                 {...project}
                 onClick={() => {
-                  onProjectClick(project.id);
+                  if ((project as any).externalUrl) {
+                    window.open(
+                      (project as any).externalUrl,
+                      "_blank",
+                    );
+                  } else {
+                    onProjectClick(project.id);
+                  }
                 }}
               />
             </motion.div>
@@ -2810,14 +2817,13 @@ export default function PortfolioLandingPageDesign() {
         "https://drive.google.com/file/d/1R4cacgEOygwYXHETaOE84Pcupo-XASyK/view",
     },
     {
-      title: "Sweetmap",
+      title: "FINS: The Agentic Wallet",
       category: "Mobile App Design",
       description:
-        "Your go-to app for discovering the sweetest treats and desserts near you.",
-      image: imgSweetmap,
-      id: "sweetmap",
-      pdfUrl:
-        "https://drive.google.com/file/d/1YU0AHeoI7rvR4oDq7M34lIp2lCYnj-fJ/view",
+        "Transforming Financial Anxiety into Financial Agency through Calm Technology.",
+      image: imgFins,
+      id: "fins",
+      externalUrl: "https://fins.figma.site/",
     },
     {
       title: "MOHFW Dashboard",
