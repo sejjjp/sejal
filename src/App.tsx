@@ -6,6 +6,7 @@ import imgImage251 from "figma:asset/7707d3ce251bee5dc79e0eb350da4304e479ea31.pn
 import { imgGroup } from "./imports/svg-alsdf";
 import { AnimatedParticles } from "./components/AnimatedParticles";
 import { ProfessionalExperience } from "./components/ProfessionalExperience";
+import { ExplorationsSection } from "./components/ExplorationsSection";
 import { ContactSection } from "./components/ContactSection";
 import { FlowyBackground } from "./components/FlowyBackground";
 import { SmoothScrollHandler } from "./components/SmoothScroll";
@@ -594,7 +595,7 @@ function AnimatedBackground() {
 function Text() {
   return (
     <div className="relative" data-name="Text">
-      <p className="font-['Caveat',sans-serif] font-normal text-[#99a1af] text-2xl md:text-3xl xl:text-[36px] text-center">{`Hi! I'm`}</p>
+      <p className="font-['Caveat',sans-serif] font-normal text-[rgb(217,147,255)] text-2xl md:text-3xl xl:text-[36px] text-center">{`Hi! I'm`}</p>
     </div>
   );
 }
@@ -602,7 +603,7 @@ function Text() {
 function Heading() {
   return (
     <div className="relative w-full" data-name="Heading 1">
-      <p className="font-['Playfair_Display',sans-serif] font-normal text-[#101828] text-4xl md:text-6xl xl:text-[96px] text-center">
+      <p className="font-['Playfair_Display',sans-serif] font-normal text-[#101828] text-3xl md:text-5xl xl:text-[96px] text-center">
         Sejal Kautkar
       </p>
     </div>
@@ -2483,6 +2484,34 @@ function Link() {
   );
 }
 
+function LinkExplorations() {
+  const handleClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+  ) => {
+    e.preventDefault();
+    const element = document.getElementById("explorations");
+    if (element) {
+      const offsetTop = element.offsetTop - 80;
+      window.scrollTo({ top: offsetTop, behavior: "smooth" });
+    }
+  };
+
+  return (
+    <a
+      href="#explorations"
+      onClick={handleClick}
+      className="relative shrink-0"
+      data-name="Link"
+    >
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-center relative hover:opacity-70 transition-opacity">
+        <p className="font-['Inter',sans-serif] font-normal leading-[24px] not-italic relative shrink-0 text-[#364153] text-[16px] text-nowrap">
+          Explorations
+        </p>
+      </div>
+    </a>
+  );
+}
+
 function Link1() {
   const handleClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
@@ -2515,11 +2544,11 @@ function Link2() {
   return (
     <a
       href="#contact"
-      className="basis-0 grow h-[24px] min-h-px min-w-px relative shrink-0"
+      className="relative shrink-0"
       data-name="Link"
     >
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full hover:opacity-70 transition-opacity">
-        <p className="absolute font-['Inter',sans-serif] font-normal leading-[24px] left-0 not-italic text-[#364153] text-[16px] text-nowrap top-[-1px]">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-center relative hover:opacity-70 transition-opacity">
+        <p className="font-['Inter',sans-serif] font-normal leading-[24px] not-italic relative shrink-0 text-[#364153] text-[16px] text-nowrap">
           Contact
         </p>
       </div>
@@ -2529,13 +2558,11 @@ function Link2() {
 
 function Navigation() {
   return (
-    <div
-      className="h-[24px] relative shrink-0 w-[300px]"
-      data-name="Navigation"
-    >
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[48px] items-start relative size-full">
+    <div className="relative shrink-0" data-name="Navigation">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[32px] items-start relative">
         <Link />
         <Link1 />
+        <LinkExplorations />
         <Link2 />
       </div>
     </div>
@@ -2555,7 +2582,7 @@ function Header() {
         <Container41 />
 
         {/* Desktop Navigation */}
-        <div className="hidden md:block">
+        <div className="hidden md:block xl:mr-12">
           <Navigation />
         </div>
 
@@ -2602,16 +2629,58 @@ function Header() {
             <a
               href="#home"
               className="font-['Inter',sans-serif] text-[#364153] text-lg hover:text-[#7f56d9] transition-colors py-2"
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={(e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+                setMobileMenuOpen(false);
+              }}
             >
               Home
             </a>
             <a
+              href="#experience"
+              className="font-['Inter',sans-serif] text-[#364153] text-lg hover:text-[#7f56d9] transition-colors py-2"
+              onClick={(e) => {
+                e.preventDefault();
+                const element = document.getElementById("experience");
+                if (element) {
+                  const offsetTop = element.offsetTop - 80;
+                  window.scrollTo({ top: offsetTop, behavior: "smooth" });
+                }
+                setMobileMenuOpen(false);
+              }}
+            >
+              Experience
+            </a>
+            <a
               href="#projects"
               className="font-['Inter',sans-serif] text-[#364153] text-lg hover:text-[#7f56d9] transition-colors py-2"
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={(e) => {
+                e.preventDefault();
+                const element = document.getElementById("projects");
+                if (element) {
+                  const offsetTop = element.offsetTop - 80;
+                  window.scrollTo({ top: offsetTop, behavior: "smooth" });
+                }
+                setMobileMenuOpen(false);
+              }}
             >
               Work
+            </a>
+            <a
+              href="#explorations"
+              className="font-['Inter',sans-serif] text-[#364153] text-lg hover:text-[#7f56d9] transition-colors py-2"
+              onClick={(e) => {
+                e.preventDefault();
+                const element = document.getElementById("explorations");
+                if (element) {
+                  const offsetTop = element.offsetTop - 80;
+                  window.scrollTo({ top: offsetTop, behavior: "smooth" });
+                }
+                setMobileMenuOpen(false);
+              }}
+            >
+              Explorations
             </a>
             <a
               href="#contact"
@@ -2748,21 +2817,30 @@ function ProjectsSection({
   return (
     <div
       id="projects"
-      className="relative bg-white py-12 md:py-16 lg:py-24 px-4 md:px-8 lg:px-12"
+      className="relative bg-white py-12 md:py-16 lg:py-20 px-4 md:px-8 lg:px-12"
       data-name="ProjectsSection"
     >
       <div className="max-w-[1400px] mx-auto">
         <motion.div
-          className="text-center mb-12 md:mb-16"
+          className="text-center mb-10 md:mb-12 lg:mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="font-['Playfair_Display',sans-serif] text-3xl md:text-5xl lg:text-[64px] text-[#101828] mb-4">
+          <motion.p
+            className="font-['Caveat',sans-serif] text-[28px] md:text-[34px] lg:text-[38px] text-purple-400/80 mb-2"
+            initial={{ opacity: 0, rotate: -3 }}
+            whileInView={{ opacity: 1, rotate: -1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+          >
+            Here is my
+          </motion.p>
+          <h2 className="font-['Playfair_Display',sans-serif] text-2xl md:text-4xl lg:text-[64px] text-[#101828] mb-4">
             Featured Projects
           </h2>
-          <p className="font-['Inter',sans-serif] text-base md:text-lg leading-relaxed text-[#4a5565] max-w-[600px] mx-auto mb-8 px-4">
+          <p className="font-['Inter',sans-serif] text-sm md:text-base lg:text-lg leading-relaxed text-[#4a5565] max-w-[600px] mx-auto mb-6 md:mb-8 px-4">
             Explore my design work showcasing user-centric
             solutions and innovative approaches
           </p>
@@ -2895,13 +2973,13 @@ export default function PortfolioLandingPageDesign() {
       {/* Hero/Landing Section - Mobile & Tablet (Responsive, No Overlapping) */}
       <div
         id="home"
-        className="xl:hidden relative w-full z-10 pt-24 pb-8 px-4"
+        className="xl:hidden relative w-full z-10 pt-24 pb-16 px-4"
       >
         <div className="relative w-full max-w-4xl mx-auto">
           <AnimatedBackground />
 
           {/* Hero Content */}
-          <div className="relative z-10 text-center mb-8">
+          <div className="relative z-10 text-center mb-12">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -2913,7 +2991,7 @@ export default function PortfolioLandingPageDesign() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="mt-4"
+              className="mt-6"
             >
               <Container21 />
             </motion.div>
@@ -2921,7 +2999,7 @@ export default function PortfolioLandingPageDesign() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="mt-6"
+              className="mt-8 px-4"
             >
               <Paragraph />
             </motion.div>
@@ -2929,14 +3007,14 @@ export default function PortfolioLandingPageDesign() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="mt-6 flex justify-center"
+              className="mt-8 flex justify-center"
             >
               <Button />
             </motion.div>
           </div>
 
           {/* Horizontal Scrolling Skills */}
-          <div className="relative z-10 mt-8 overflow-hidden py-4">
+          <div className="relative z-10 mt-12 overflow-hidden py-6">
             <motion.div
               className="flex gap-8 whitespace-nowrap"
               animate={{
@@ -2975,7 +3053,7 @@ export default function PortfolioLandingPageDesign() {
               ].map((skill, index) => (
                 <span
                   key={index}
-                  className="font-['Inter',sans-serif] text-[#c27aff] text-lg md:text-xl font-normal"
+                  className="font-['Inter',sans-serif] text-[#c27aff] text-base md:text-xl font-normal"
                 >
                   {skill} ✦
                 </span>
@@ -2986,12 +3064,12 @@ export default function PortfolioLandingPageDesign() {
       </div>
 
       {/* Professional Experience Section */}
-      <div className="relative z-10 xl:mt-0 -mt-8">
+      <div className="relative z-10 xl:mt-0 mt-0">
         <ProfessionalExperience />
       </div>
 
       {/* Projects Section */}
-      <div className="relative z-10">
+      <div className="relative z-10 mt-0">
         <ProjectsSection
           onProjectClick={(projectId) =>
             setSelectedProject(projectId)
@@ -2999,8 +3077,13 @@ export default function PortfolioLandingPageDesign() {
         />
       </div>
 
+      {/* Explorations Section */}
+      <div className="relative z-10 mt-0">
+        <ExplorationsSection />
+      </div>
+
       {/* Contact Section */}
-      <div className="relative z-10">
+      <div className="relative z-10 mt-0">
         <ContactSection />
       </div>
 

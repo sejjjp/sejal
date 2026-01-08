@@ -56,7 +56,7 @@ export function ContactSection() {
   return (
     <section
       id="contact"
-      className="relative bg-white py-20 md:py-25 px-4 md:px-8 lg:px-12 overflow-hidden"
+      className="relative bg-white py-12 md:py-16 lg:py-20 px-4 md:px-8 lg:px-12 overflow-hidden"
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
@@ -89,23 +89,32 @@ export function ContactSection() {
       <div className="max-w-[1200px] mx-auto relative z-10">
         {/* Header */}
         <motion.div
-          className="text-center mb-16 md:mb-20"
+          className="text-center mb-10 md:mb-14 lg:mb-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="font-['Playfair_Display',sans-serif] text-4xl md:text-5xl lg:text-[64px] text-[#101828] mb-6">
+          <motion.p
+            className="font-['Caveat',sans-serif] text-[28px] md:text-[34px] lg:text-[38px] text-purple-400/80 mb-2"
+            initial={{ opacity: 0, rotate: -3 }}
+            whileInView={{ opacity: 1, rotate: -1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+          >
+            Get in touch
+          </motion.p>
+          <h2 className="font-['Playfair_Display',sans-serif] text-2xl md:text-4xl lg:text-[64px] text-[#101828] mb-4 md:mb-6">
             Let's Create Together
           </h2>
-          <p className="font-['Inter',sans-serif] text-base md:text-lg leading-relaxed text-[#4a5565] max-w-[600px] mx-auto">
+          <p className="font-['Inter',sans-serif] text-sm md:text-base lg:text-lg leading-relaxed text-[#4a5565] max-w-[600px] mx-auto px-4">
             I'm always open to discussing new projects, creative
             ideas, or opportunities to be part of your vision.
           </p>
         </motion.div>
 
         {/* Contact Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 mb-12 md:mb-16">
           {contactLinks.map((link, index) => (
             <motion.a
               key={index}
@@ -120,7 +129,7 @@ export function ContactSection() {
                   ? "noopener noreferrer"
                   : undefined
               }
-              className="group relative bg-white rounded-[20px] p-8 border border-gray-100 hover:border-gray-200 transition-all duration-300 hover:shadow-[0px_20px_40px_-10px_rgba(0,0,0,0.08)] cursor-pointer"
+              className="group relative bg-white rounded-[16px] md:rounded-[20px] p-6 md:p-8 border border-gray-100 hover:border-gray-200 transition-all duration-300 hover:shadow-[0px_20px_40px_-10px_rgba(0,0,0,0.08)] cursor-pointer"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -144,10 +153,10 @@ export function ContactSection() {
                     </p>
                     <ExternalLink className="w-3 h-3 text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
-                  <p className="font-['Inter',sans-serif] text-[18px] text-[#101828] mb-2 truncate">
+                  <p className="font-['Inter',sans-serif] text-[16px] md:text-[18px] text-[#101828] mb-2 truncate">
                     {link.value}
                   </p>
-                  <p className="font-['Inter',sans-serif] text-[14px] text-gray-500">
+                  <p className="font-['Inter',sans-serif] text-[13px] md:text-[14px] text-gray-500">
                     {link.description}
                   </p>
                 </div>
