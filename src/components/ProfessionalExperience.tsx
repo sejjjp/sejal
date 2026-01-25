@@ -7,7 +7,7 @@ export function ProfessionalExperience() {
   return (
     <div
       id="experience"
-      className="relative bg-gradient-to-br from-[rgba(249,250,251,0.5)] via-white to-[rgba(250,245,255,0.3)] py-12 md:py-16 lg:py-20 px-4 md:px-8 lg:px-12 overflow-hidden"
+      className="relative bg-gradient-to-br from-[rgba(249,250,251,0.5)] via-white to-[rgba(250,245,255,0.3)] py-10 md:py-10 lg:py-20 px-4 md:px-8 lg:px-12 overflow-hidden"
       data-name="ProfessionalExperience"
     >
       {/* Decorative background elements */}

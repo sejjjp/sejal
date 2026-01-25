@@ -11,6 +11,7 @@ import { ContactSection } from "./components/ContactSection";
 import { FlowyBackground } from "./components/FlowyBackground";
 import { SmoothScrollHandler } from "./components/SmoothScroll";
 import { PDFViewerModal } from "./components/PDFViewerModal";
+import { SamsungIrisCaseStudy } from "./components/SamsungIrisCaseStudy";
 import imgSamsungIris from "figma:asset/d240d9fe427e86989f37f98da4e96de2fa8190d6.png";
 import imgFins from "figma:asset/5d470f87e1948326477b8994d8599a467dc80dfa.png";
 import imgMoHFW from "figma:asset/09339eee87f6aadccbaba46a2109de3122ae2dca.png";
@@ -635,7 +636,17 @@ function Paragraph() {
       className="relative w-full max-w-2xl mx-auto"
       data-name="Paragraph"
     >
-      <p className="font-['Inter',sans-serif] font-normal leading-relaxed text-[#4a5565] text-sm md:text-base text-center">{`I'm a UI/UX Design scholar at MIT ADT University, Pune. I possess comprehensive command of Figma, Procreate, and Adobe XD, committed to developing intuitive, user-centric digital solutions. Currently a UI/UX & Marketing Intern at Dharmik Vibes, shaping digital presence and content strategy. Passionate about resolving tangible user challenges.`}</p>
+      <span className="font-['Inter',sans-serif] leading-relaxed text-[#4a5565] text-sm md:text-base text-center font-bold font-normal">
+        {`I’m a UI/UX Design Scholar at MIT ADT, Pune 🇮🇳. I don't just design screens; I solve complex logistical problems. From proactive AI agents like `}
+      </span>
+      <span className="font-['Inter',sans-serif] leading-relaxed text-[#4a5565] text-sm md:text-base text-center font-bold">
+        {`Samsung Iris`}
+      </span>
+      <span className="font-['Inter',sans-serif] leading-relaxed text-[#4a5565] text-sm md:text-base text-center font-normal">{` to privacy-first tools like `}</span>
+      <span className="font-['Inter',sans-serif] leading-relaxed text-[#4a5565] text-sm md:text-base text-center font-bold">{`Fins`}</span>
+      <span className="font-['Inter',sans-serif] leading-relaxed text-[#4a5565] text-sm md:text-base text-center font-normal">
+        {`, I bridge the gap between aesthetic appeal and functional utility.`}
+      </span>
     </div>
   );
 }
@@ -692,11 +703,11 @@ function Button() {
 function HeroSection1() {
   return (
     <div
-      className="relative xl:absolute h-auto xl:h-[474px] left-0 xl:left-[403px] top-0 xl:top-[322px] w-full xl:w-[672px]"
+      className="relative xl:absolute h-auto xl:h-[474px] left-0 xl:left-[403px] top-0 xl:top-[212px] w-full xl:w-[672px] px-4"
       data-name="HeroSection"
     >
       <motion.div
-        className="text-center mb-2 xl:absolute xl:left-[292.73px] xl:top-[-13.1px]"
+        className="text-center mb-4 pt-20 md:pt-24 xl:pt-0 xl:mb-2 xl:absolute xl:left-[292.73px] xl:top-[-13.1px] z-10"
         style={
           {
             "--transform-inner-width": "0",
@@ -712,7 +723,7 @@ function HeroSection1() {
         </div>
       </motion.div>
       <motion.div
-        className="pt-10 xl:pt-0 mb-6 text-center xl:absolute xl:left-0 xl:top-[48px] xl:w-[672px]"
+        className="pt-2 xl:pt-0 mb-6 text-center xl:absolute xl:left-0 xl:top-[48px] xl:w-[672px]"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
@@ -748,7 +759,7 @@ function HeroSection1() {
         <Paragraph />
       </motion.div>
       <motion.div
-        className="flex justify-center xl:absolute xl:left-[259.68px] xl:top-[418px]"
+        className="flex justify-center xl:absolute xl:left-[259.68px] xl:top-[370px]"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         whileHover={{ scale: 1.05 }}
@@ -768,11 +779,11 @@ function HeroSection1() {
 function App() {
   return (
     <div
-      className="absolute bg-white h-[1118px] left-0 overflow-clip top-0 w-full"
+      className="absolute bg-white min-h-[1118px] left-0 overflow-y-auto overflow-x-clip top-0 w-full"
       data-name="App"
     >
       <AnimatedBackground />
-      <div className="max-w-[1478px] mx-auto relative h-full">
+      <div className="max-w-[1478px] mx-auto relative min-h-full">
         <HeroSection1 />
       </div>
     </div>
@@ -1941,7 +1952,7 @@ function FloatingElements6() {
       data-name="FloatingElements"
     >
       <motion.div
-        className="absolute flex h-[292px] items-center justify-center left-[1075.35px] top-[110px] w-[253.204px] pointer-events-auto"
+        className="absolute flex h-[292px] items-center justify-center left-[1075.35px] top-[30px] w-[253.204px] pointer-events-auto"
         style={
           {
             "--transform-inner-width": "0",
@@ -1987,7 +1998,7 @@ function FloatingElements6() {
         </div>
       </motion.div>
       <motion.div
-        className="absolute flex h-[226.558px] items-center justify-center left-[104px] top-[145px] w-[247.224px] pointer-events-auto"
+        className="absolute flex h-[226.558px] items-center justify-center left-[104px] top-[40px] w-[247.224px] pointer-events-auto"
         style={
           {
             "--transform-inner-width": "0",
@@ -2033,7 +2044,7 @@ function FloatingElements6() {
         </div>
       </motion.div>
       <motion.div
-        className="absolute flex h-[285.066px] items-center justify-center left-[1151px] top-[425px] w-[278.302px] pointer-events-auto"
+        className="absolute flex h-[285.066px] items-center justify-center left-[1151px] top-[340px] w-[278.302px] pointer-events-auto"
         style={
           {
             "--transform-inner-width": "0",
@@ -2076,7 +2087,7 @@ function FloatingElements6() {
         </div>
       </motion.div>
       <motion.div
-        className="absolute flex h-[190.535px] items-center justify-center left-[76px] top-[465px] w-[224.428px] pointer-events-auto"
+        className="absolute flex h-[190.535px] items-center justify-center left-[76px] top-[375px] w-[224.428px] pointer-events-auto"
         style={
           {
             "--transform-inner-width": "0",
@@ -2140,7 +2151,7 @@ function FloatingElements6() {
         </div>
       </motion.div>
       <motion.div
-        className="absolute flex h-[220.069px] items-center justify-center left-[148px] top-[778px] w-[269.655px] pointer-events-auto"
+        className="absolute flex h-[220.069px] items-center justify-center left-[148px] top-[675px] w-[269.655px] pointer-events-auto"
         style={
           {
             "--transform-inner-width": "0",
@@ -2190,7 +2201,7 @@ function FloatingElements6() {
         </div>
       </motion.div>
       <motion.div
-        className="absolute flex h-[249.144px] items-center justify-center left-[1004px] top-[792px] w-[260.087px] pointer-events-auto"
+        className="absolute flex h-[249.144px] items-center justify-center left-[1004px] top-[675px] w-[260.087px] pointer-events-auto"
         style={
           {
             "--transform-inner-width": "0",
@@ -2321,7 +2332,7 @@ function FloatingElements6() {
       <Container38 />
       <Container39 />
       <motion.div
-        className="absolute flex h-[103.765px] items-center justify-center left-[1200.45px] top-[425px] w-[205.941px] pointer-events-auto"
+        className="absolute flex h-[103.765px] items-center justify-center left-[1200.45px] top-[345px] w-[205.941px] pointer-events-auto"
         style={
           {
             "--transform-inner-width": "0",
@@ -2350,7 +2361,7 @@ function FloatingElements6() {
         </div>
       </motion.div>
       <motion.div
-        className="absolute flex h-[167.765px] items-center justify-center left-[1180.04px] top-[499.85px] w-[224.53px] pointer-events-auto"
+        className="absolute flex h-[167.765px] items-center justify-center left-[1180.04px] top-[415px] w-[224.53px] pointer-events-auto"
         style={
           {
             "--transform-inner-width": "0",
@@ -2401,7 +2412,7 @@ function FloatingElements6() {
         </div>
       </motion.div>
       <motion.div
-        className="absolute flex h-[75.765px] items-center justify-center left-[1173px] top-[637.32px] w-[197.809px] pointer-events-auto"
+        className="absolute flex h-[75.765px] items-center justify-center left-[1173px] top-[555.32px] w-[197.809px] pointer-events-auto"
         style={
           {
             "--transform-inner-width": "0",
@@ -2448,7 +2459,7 @@ function Container41() {
       data-name="Container"
     >
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="absolute font-['Tinos',sans-serif] leading-[32px] left-0 not-italic text-[#101828] text-[24px] text-nowrap top-0">
+        <p className="absolute font-['Tinos',sans-serif] leading-[32px] left-0 not-italic text-[#101828] text-[24px] text-nowrap top-0 font-[Playfair_Display]">
           Sejal Kautkar
         </p>
       </div>
@@ -2476,7 +2487,7 @@ function Link() {
       data-name="Link"
     >
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-center relative hover:opacity-70 transition-opacity">
-        <p className="font-['Inter',sans-serif] font-normal leading-[24px] not-italic relative shrink-0 text-[#364153] text-[16px] text-nowrap">
+        <p className="font-['Inter',sans-serif] font-normal leading-[24px] not-italic relative shrink-0 text-[#364153] text-[16px] text-nowrap font-[Inter]">
           Experience
         </p>
       </div>
@@ -2504,7 +2515,7 @@ function LinkExplorations() {
       data-name="Link"
     >
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-center relative hover:opacity-70 transition-opacity">
-        <p className="font-['Inter',sans-serif] font-normal leading-[24px] not-italic relative shrink-0 text-[#364153] text-[16px] text-nowrap">
+        <p className="font-['Inter',sans-serif] font-normal leading-[24px] not-italic relative shrink-0 text-[#364153] text-[16px] text-nowrap font-[Inter]">
           Explorations
         </p>
       </div>
@@ -2532,7 +2543,7 @@ function Link1() {
       data-name="Link"
     >
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-center relative hover:opacity-70 transition-opacity">
-        <p className="font-['Inter',sans-serif] font-normal leading-[24px] not-italic relative shrink-0 text-[#364153] text-[16px] text-nowrap">
+        <p className="font-['Inter',sans-serif] font-normal leading-[24px] not-italic relative shrink-0 text-[#364153] text-[16px] text-nowrap font-[Inter]">
           Projects
         </p>
       </div>
@@ -2548,7 +2559,7 @@ function Link2() {
       data-name="Link"
     >
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-center relative hover:opacity-70 transition-opacity">
-        <p className="font-['Inter',sans-serif] font-normal leading-[24px] not-italic relative shrink-0 text-[#364153] text-[16px] text-nowrap">
+        <p className="font-['Inter',sans-serif] font-normal leading-[24px] not-italic relative shrink-0 text-[#364153] text-[16px] text-nowrap font-[Inter]">
           Contact
         </p>
       </div>
@@ -2642,10 +2653,14 @@ function Header() {
               className="font-['Inter',sans-serif] text-[#364153] text-lg hover:text-[#7f56d9] transition-colors py-2"
               onClick={(e) => {
                 e.preventDefault();
-                const element = document.getElementById("experience");
+                const element =
+                  document.getElementById("experience");
                 if (element) {
                   const offsetTop = element.offsetTop - 80;
-                  window.scrollTo({ top: offsetTop, behavior: "smooth" });
+                  window.scrollTo({
+                    top: offsetTop,
+                    behavior: "smooth",
+                  });
                 }
                 setMobileMenuOpen(false);
               }}
@@ -2657,10 +2672,14 @@ function Header() {
               className="font-['Inter',sans-serif] text-[#364153] text-lg hover:text-[#7f56d9] transition-colors py-2"
               onClick={(e) => {
                 e.preventDefault();
-                const element = document.getElementById("projects");
+                const element =
+                  document.getElementById("projects");
                 if (element) {
                   const offsetTop = element.offsetTop - 80;
-                  window.scrollTo({ top: offsetTop, behavior: "smooth" });
+                  window.scrollTo({
+                    top: offsetTop,
+                    behavior: "smooth",
+                  });
                 }
                 setMobileMenuOpen(false);
               }}
@@ -2672,10 +2691,14 @@ function Header() {
               className="font-['Inter',sans-serif] text-[#364153] text-lg hover:text-[#7f56d9] transition-colors py-2"
               onClick={(e) => {
                 e.preventDefault();
-                const element = document.getElementById("explorations");
+                const element =
+                  document.getElementById("explorations");
                 if (element) {
                   const offsetTop = element.offsetTop - 80;
-                  window.scrollTo({ top: offsetTop, behavior: "smooth" });
+                  window.scrollTo({
+                    top: offsetTop,
+                    behavior: "smooth",
+                  });
                 }
                 setMobileMenuOpen(false);
               }}
@@ -2760,8 +2783,8 @@ function ProjectsSection({
         "Seamless browsing with an AI agent for planning, search, and task management.",
       image: imgSamsungIris,
       id: "samsung-iris",
-      pdfUrl:
-        "https://drive.google.com/file/d/1iU2AAUHQYKWNWVk5wzA48ZGp535b7LIf/view?usp=drive_link",
+      externalUrl:
+        "https://iris-case-study.figma.site/?from=portfolio",
     },
     {
       title: "FINS: The Agentic Wallet",
@@ -2770,7 +2793,7 @@ function ProjectsSection({
         "Transforming Financial Anxiety into Financial Agency through Calm Technology.",
       image: imgFins,
       id: "fins",
-      externalUrl: "https://fins.figma.site/",
+      externalUrl: "https://fins.figma.site/?from=portfolio",
     },
     {
       title: "Ministry of Health & Family Welfare",
@@ -2779,8 +2802,8 @@ function ProjectsSection({
         "A User-Centric Redesign of the Ministry of Health & Family Welfare Website.",
       image: imgMoHFW,
       id: "mohfw",
-      pdfUrl:
-        "https://drive.google.com/file/d/1iU2AAUHQYKWNWVk5wzA48ZGp535b7LIf/view?usp=drive_link",
+      externalUrl:
+        "https://mohfw-redesign.figma.site?from=portfolio",
     },
     {
       title: "Essentrail",
@@ -2789,8 +2812,8 @@ function ProjectsSection({
         "Redefining comfort and convenience in train travel.",
       image: imgEssentrail,
       id: "essentrail",
-      pdfUrl:
-        "https://drive.google.com/file/d/1iU2AAUHQYKWNWVk5wzA48ZGp535b7LIf/view?usp=drive_link",
+      externalUrl:
+        "https://essentrail.figma.site/?from=portfolio",
     },
     {
       title: "Chromify",
@@ -2799,8 +2822,7 @@ function ProjectsSection({
         "Smart glasses that instantly recolor to match any outfit.",
       image: imgChromify,
       id: "chromify",
-      pdfUrl:
-        "https://drive.google.com/file/d/1iU2AAUHQYKWNWVk5wzA48ZGp535b7LIf/view?usp=drive_link",
+      externalUrl: "https://chromify.figma.site?from=portfolio",
     },
     {
       title: "JioMart",
@@ -2809,8 +2831,7 @@ function ProjectsSection({
         "Smarter grocery shopping with improved navigation and delivery.",
       image: imgJioMart,
       id: "jiomart",
-      pdfUrl:
-        "https://drive.google.com/file/d/1iU2AAUHQYKWNWVk5wzA48ZGp535b7LIf/view?usp=drive_link",
+      externalUrl: "https://jiomart.figma.site?from=portfolio",
     },
   ];
 
@@ -2861,10 +2882,9 @@ function ProjectsSection({
                 {...project}
                 onClick={() => {
                   if ((project as any).externalUrl) {
-                    window.open(
-                      (project as any).externalUrl,
-                      "_blank",
-                    );
+                    window.location.href = (
+                      project as any
+                    ).externalUrl;
                   } else {
                     onProjectClick(project.id);
                   }
@@ -2891,8 +2911,8 @@ export default function PortfolioLandingPageDesign() {
         "Seamless browsing with an AI agent for planning, search, and task management.",
       image: imgSamsungIris,
       id: "samsung-iris",
-      pdfUrl:
-        "https://drive.google.com/file/d/1R4cacgEOygwYXHETaOE84Pcupo-XASyK/view",
+      externalUrl:
+        "https://iris-case-study.figma.site/?from=portfolio",
     },
     {
       title: "FINS: The Agentic Wallet",
@@ -2901,17 +2921,17 @@ export default function PortfolioLandingPageDesign() {
         "Transforming Financial Anxiety into Financial Agency through Calm Technology.",
       image: imgFins,
       id: "fins",
-      externalUrl: "https://fins.figma.site/",
+      externalUrl: "https://fins.figma.site/?from=portfolio",
     },
     {
-      title: "MOHFW Dashboard",
+      title: "Ministry of Health & Family Welfare",
       category: "Government Website Redesign",
       description:
         "A fresh perspective for the Ministry of Health & Family Welfare digital experience.",
       image: imgMoHFW,
       id: "mohfw",
-      pdfUrl:
-        "https://drive.google.com/file/d/1vHBVVCSVVwjCeIdYfHE8pAa3nb23ZefN/view",
+      externalUrl:
+        "https://mohfw-redesign.figma.site/?from=portfolio",
     },
     {
       title: "Essentrail",
@@ -2920,8 +2940,8 @@ export default function PortfolioLandingPageDesign() {
         "Streamlining essential services with intuitive design.",
       image: imgEssentrail,
       id: "essentrail",
-      pdfUrl:
-        " https://drive.google.com/file/d/1-h971U1Tk-biVDzGpamZPScPPg4kNY29/view?usp=sharing",
+      externalUrl:
+        "https://essentrail.figma.site/?from=portfolio",
     },
     {
       title: "Chromify",
@@ -2930,8 +2950,8 @@ export default function PortfolioLandingPageDesign() {
         "Modern web experience with vibrant aesthetics.",
       image: imgChromify,
       id: "chromify",
-      pdfUrl:
-        "https://drive.google.com/file/d/1Hb1HW2mKQ1c73b-hAvG4P-FFKXXkGRtm/view?usp=sharing",
+      externalUrl:
+        "https://chromify.figma.site/?from=portfolio",
     },
     {
       title: "JioMart",
@@ -2940,8 +2960,7 @@ export default function PortfolioLandingPageDesign() {
         "Smarter grocery shopping with improved navigation and delivery.",
       image: imgJioMart,
       id: "jiomart",
-      pdfUrl:
-        "https://drive.google.com/file/d/1ZNbNio1rvGKsFX3iJaRUsbVkaF6_GreX/view",
+      externalUrl: "https://jiomart.figma.site/?from=portfolio",
     },
   ];
 
@@ -2977,9 +2996,10 @@ export default function PortfolioLandingPageDesign() {
       >
         <div className="relative w-full max-w-4xl mx-auto">
           <AnimatedBackground />
+          <Text />
 
           {/* Hero Content */}
-          <div className="relative z-10 text-center mb-12">
+          <div className="relative z-10 text-center mb-12 pt-2">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -3088,20 +3108,22 @@ export default function PortfolioLandingPageDesign() {
       </div>
 
       {/* PDF Viewer Modal - Rendered at root level to overlay everything */}
-      {selectedProject && (
-        <PDFViewerModal
-          isOpen={true}
-          onClose={() => setSelectedProject(null)}
-          pdfUrl={
-            projects.find((p) => p.id === selectedProject)
-              ?.pdfUrl || ""
-          }
-          projectTitle={
-            projects.find((p) => p.id === selectedProject)
-              ?.title || ""
-          }
-        />
-      )}
+      {selectedProject &&
+        projects.find((p) => p.id === selectedProject)
+          ?.pdfUrl && (
+          <PDFViewerModal
+            isOpen={true}
+            onClose={() => setSelectedProject(null)}
+            pdfUrl={
+              projects.find((p) => p.id === selectedProject)
+                ?.pdfUrl || ""
+            }
+            projectTitle={
+              projects.find((p) => p.id === selectedProject)
+                ?.title || ""
+            }
+          />
+        )}
     </div>
   );
 }

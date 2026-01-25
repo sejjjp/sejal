@@ -1,5 +1,5 @@
 
-  # Sejal Kautkar Portfolio (Copy)
+  # Sejal Kautkar Portfolio
 
   This is a code bundle for Sejal Kautkar Portfolio. The original project is available at https://www.figma.com/design/ZGKXjuVI40jQwBCuHk28IG/Portfolio-Landing-Page-Design--Copy-.
 
