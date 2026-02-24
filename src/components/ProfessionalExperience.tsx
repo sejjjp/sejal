@@ -1,9 +1,70 @@
-import React from "react";
-import { motion } from "motion/react";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
 import imgScreenshot from "figma:asset/a408c3c294fd54db242b36f0be3223e6c56740ae.png";
 import imgDvPartnerLogo from "figma:asset/5c7e5d13a4551192be5c4f94808a36228eaece9c.png";
+import imgSociolinq from "figma:asset/ab611b5bd026b435a77726b8564d476a9012a8b2.png";
+import imgSociolinqLogo from "figma:asset/6cefd352121c5484acd9abe8ae237200cf863945.png";
+import { ChevronDown } from "lucide-react";
+
+interface ExperienceData {
+  id: string;
+  role: string;
+  company: string;
+  companySubtext?: string;
+  duration: string;
+  logo?: string;
+  logoAlt?: string;
+  accentColor: string;
+  bullets: string[];
+  tags?: string[];
+  screenshot: string;
+  screenshotAlt: string;
+  certificateUrl?: string;
+}
+
+const experiences: ExperienceData[] = [
+  {
+    id: "dharmik",
+    role: "UX Designer Intern",
+    company: "Dharmik Vibes",
+    companySubtext: "(Divvib Lifestyle Pvt Ltd)",
+    duration: "Aug 2025 - Nov 2025",
+    logo: imgDvPartnerLogo,
+    logoAlt: "Dharmik Vibes Logo",
+    accentColor: "#E87A2D",
+    bullets: [
+      "Conducted extensive user research, personas, and journey mapping for spiritual travel.",
+      "Designed clear Information Architecture and interactive wireframes to simplify navigation.",
+      "Created intuitive UI for AI-driven recommendation engines.",
+      "Enhanced brand identity with aesthetically aligned UI elements and color systems.",
+    ],
+    screenshot: imgScreenshot,
+    screenshotAlt: "Dharmik Vibes Project Screenshot",
+    certificateUrl:
+      "https://drive.google.com/file/d/15aqvw89Qhh2A167Bg-MFqj2wwsDH2V4f/view?usp=sharing",
+  },
+  {
+    id: "sociolinq",
+    role: "UI/UX Design Intern",
+    company: "SociolinQ Technologies Private Limited",
+    duration: "Feb 2026 - Feb 2026",
+    logo: imgSociolinqLogo,
+    logoAlt: "SociolinQ Logo",
+    accentColor: "#4B50B6",
+    bullets: [
+      "Designed a centralized HRMS dashboard featuring dynamic editing modules for 'Employee Central'.",
+      "Simplified complex admin workflows into intuitive, easy-to-navigate user flows.",
+      "Expanded the internal Design System with scalable components to accelerate developer handoff.",
+    ],
+    tags: ["HRMS Design", "Design Systems", "Complex Workflows"],
+    screenshot: imgSociolinq,
+    screenshotAlt: "SociolinQ HRMS Employee Central Dashboard",
+  },
+];
 
 export function ProfessionalExperience() {
+  const [activeId, setActiveId] = useState<string>("dharmik");
+
   return (
     <div
       id="experience"
@@ -76,158 +137,287 @@ export function ProfessionalExperience() {
           </h2>
         </motion.div>
 
-        {/* Main Content - Two Column Layout on Desktop, Single Column on Mobile */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          {/* Left Side - Screenshot */}
-          <motion.div
-            className="order-2 lg:order-1"
-            initial={{ opacity: 0, x: -50, rotate: -5 }}
-            whileInView={{ opacity: 1, x: 0, rotate: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, type: "spring" }}
-          >
-            <div className="relative">
-              {/* Gradient Background Card */}
-              <div
-                className="absolute inset-0 rounded-2xl transform rotate-2 scale-105 -z-10"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(156.995deg, rgb(223, 234, 254) 7.9104%, rgb(241, 233, 251) 50%, rgb(244, 232, 246) 92.09%)",
-                }}
-              />
+        {/* Timeline Container */}
+        <div className="relative">
+          {/* Vertical Timeline Line */}
+          <div className="absolute left-6 md:left-8 top-0 bottom-0 w-[2px] bg-gradient-to-b from-purple-300 via-purple-200 to-purple-100 rounded-full z-0" />
 
-              {/* White Container with Shadow */}
-              <motion.div
-                className="bg-white rounded-2xl shadow-[0px_20px_25px_-5px_rgba(0,0,0,0.1)] p-4 md:p-6 transform -rotate-1"
-                whileHover={{ scale: 1.02, rotate: 0 }}
-                transition={{ duration: 0.3 }}
-              >
-                <div className="rounded-2xl overflow-hidden">
-                  <img
-                    src={imgScreenshot}
-                    alt="Dharmik Vibes Project Screenshot"
-                    className="w-full h-auto object-cover"
-                  />
-                </div>
-              </motion.div>
-            </div>
-          </motion.div>
-
-          {/* Right Side - Content */}
-          <motion.div
-            className="order-1 lg:order-2 relative"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            {/* Company Logo - positioned absolutely for desktop, relatively for mobile */}
-            <motion.div
-              className="relative lg:absolute lg:left-0 lg:top-4 w-32 h-32 md:w-40 md:h-32 mx-auto lg:mx-0 mb-6 lg:mb-0"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-            >
-              <img
-                src={imgDvPartnerLogo}
-                alt="Dharmik Vibes Logo"
-                className="w-full h-full object-contain"
-              />
-            </motion.div>
-
-            {/* Role Badge - positioned to align with Figma design */}
-            <motion.div
-              className="bg-white rounded-full shadow-lg px-6 py-3 mb-6 lg:ml-[220px] lg:mt-8 inline-block w-full lg:w-auto text-center lg:text-left"
-              whileHover={{ x: 3, y: -3 }}
-              transition={{ duration: 0.3 }}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <p className="font-['Inter',sans-serif] text-[#4a5565] text-sm md:text-base font-semibold leading-6">
-                UX Designer Intern | Dharmik Vibes
-              </p>
-              <p className="font-['Inter',sans-serif] text-[#4a5565] text-sm md:text-base font-semibold leading-6">
-                (Divvib Lifestyle Pvt Ltd)
-              </p>
-              <p className="font-['Inter',sans-serif] text-[#6a7282] text-xs md:text-sm mt-1 leading-5">
-                Aug 2025 – Nov 2025
-              </p>
-            </motion.div>
-
-            {/* Responsibilities List */}
-            <motion.ul
-              className="space-y-3 md:space-y-4 font-['Inter',sans-serif] text-[#4a5565] text-base md:text-lg mb-6"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              {[
-                "Conducted extensive user research, personas, and journey mapping for spiritual travel.",
-                "Designed clear Information Architecture and interactive wireframes to simplify navigation.",
-                "Created intuitive UI for AI-driven recommendation engines.",
-                "Enhanced brand identity with aesthetically aligned UI elements and color systems.",
-              ].map((item, index) => (
-                <motion.li
-                  key={index}
-                  className="flex gap-3 items-start"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+          {/* Experience Cards */}
+          <div className="space-y-6">
+            {experiences.map((exp, idx) => {
+              const isActive = activeId === exp.id;
+              return (
+                <motion.div
+                  key={exp.id}
+                  className="relative pl-16 md:pl-20"
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{
-                    duration: 0.5,
-                    delay: 0.5 + index * 0.1,
-                  }}
+                  transition={{ duration: 0.6, delay: idx * 0.15 }}
                 >
-                  <span className="text-[#ad46ff] text-xl flex-shrink-0 leading-7">
-                    •
-                  </span>
-                  <span className="leading-[1.625]">
-                    {item}
-                  </span>
-                </motion.li>
-              ))}
-            </motion.ul>
+                  {/* Timeline Dot */}
+                  <motion.div
+                    className="absolute left-[16px] md:left-[24px] top-6 z-10"
+                    animate={{
+                      scale: isActive ? 1 : 0.7,
+                    }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <div
+                      className="w-5 h-5 rounded-full border-[3px] border-white shadow-md"
+                      style={{
+                        backgroundColor: isActive
+                          ? exp.accentColor
+                          : "#d1d5db",
+                      }}
+                    />
+                    {isActive && (
+                      <motion.div
+                        className="absolute inset-0 rounded-full"
+                        style={{ backgroundColor: exp.accentColor }}
+                        animate={{ scale: [1, 1.8, 1], opacity: [0.5, 0, 0.5] }}
+                        transition={{
+                          duration: 2,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                        }}
+                      />
+                    )}
+                  </motion.div>
 
-            {/* Certificate Button */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.9 }}
-            >
-              <motion.button
-                className="bg-[#101828] text-white px-6 py-3 rounded-full font-['Inter',sans-serif] text-sm md:text-base shadow-lg hover:shadow-xl transition-shadow flex items-center gap-2 mx-auto lg:mx-0 cursor-pointer"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() =>
-                  window.open(
-                    "https://drive.google.com/file/d/15aqvw89Qhh2A167Bg-MFqj2wwsDH2V4f/view?usp=sharing",
-                    "_blank",
-                  )
-                }
-              >
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M7.5 15L12.5 10L7.5 5"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-                Certificate
-              </motion.button>
-            </motion.div>
-          </motion.div>
+                  {/* Card */}
+                  <motion.div
+                    className="rounded-2xl border cursor-pointer overflow-hidden"
+                    style={{
+                      borderColor: isActive
+                        ? `${exp.accentColor}30`
+                        : "#e5e7eb",
+                      backgroundColor: isActive ? "white" : "#fafafa",
+                      boxShadow: isActive
+                        ? "0 20px 40px -12px rgba(0,0,0,0.1)"
+                        : "0 2px 8px -2px rgba(0,0,0,0.05)",
+                    }}
+                    onClick={() => setActiveId(exp.id)}
+                    onMouseEnter={() => setActiveId(exp.id)}
+                    whileHover={
+                      !isActive
+                        ? { y: -2, boxShadow: "0 8px 24px -8px rgba(0,0,0,0.1)" }
+                        : {}
+                    }
+                    layout
+                    transition={{ layout: { duration: 0.4, ease: "easeInOut" } }}
+                  >
+                    {/* Collapsed Header - Always Visible */}
+                    <div className="p-5 md:p-6">
+                      <div className="flex items-center justify-between gap-4">
+                        <div className="flex items-center gap-4">
+                          {/* Logo or colored dot */}
+                          {exp.logo ? (
+                            <img
+                              src={exp.logo}
+                              alt={exp.logoAlt}
+                              className="w-10 h-10 md:w-12 md:h-12 object-contain flex-shrink-0"
+                            />
+                          ) : (
+                            <div
+                              className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+                              style={{ backgroundColor: `${exp.accentColor}15` }}
+                            >
+                              <span
+                                className="font-['Inter',sans-serif] text-lg"
+                                style={{ color: exp.accentColor }}
+                              >
+                                {exp.company.charAt(0)}
+                              </span>
+                            </div>
+                          )}
+                          <div>
+                            <h3 className="font-['Inter',sans-serif] text-[#101828] text-base md:text-lg">
+                              {exp.role}
+                            </h3>
+                            <p
+                              className="font-['Inter',sans-serif] text-sm md:text-base"
+                              style={{ color: exp.accentColor }}
+                            >
+                              {exp.company}
+                              {exp.companySubtext && (
+                                <span className="text-[#6a7282]">
+                                  {" "}
+                                  {exp.companySubtext}
+                                </span>
+                              )}
+                            </p>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-3 flex-shrink-0">
+                          <span className="font-['Inter',sans-serif] text-[#6a7282] text-xs md:text-sm hidden sm:block">
+                            {exp.duration}
+                          </span>
+                          <motion.div
+                            animate={{ rotate: isActive ? 180 : 0 }}
+                            transition={{ duration: 0.3 }}
+                          >
+                            <ChevronDown
+                              className="w-5 h-5 text-[#9ca3af]"
+                            />
+                          </motion.div>
+                        </div>
+                      </div>
+                      {/* Mobile duration */}
+                      <span className="font-['Inter',sans-serif] text-[#6a7282] text-xs mt-1 block sm:hidden">
+                        {exp.duration}
+                      </span>
+                    </div>
+
+                    {/* Expanded Content */}
+                    <AnimatePresence initial={false}>
+                      {isActive && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{
+                            height: { duration: 0.4, ease: "easeInOut" },
+                            opacity: { duration: 0.3, delay: 0.1 },
+                          }}
+                          className="overflow-hidden"
+                        >
+                          <div className="px-5 md:px-6 pb-6">
+                            {/* Divider */}
+                            <div
+                              className="h-[1px] mb-6"
+                              style={{
+                                backgroundImage: `linear-gradient(to right, transparent, ${exp.accentColor}30, transparent)`,
+                              }}
+                            />
+
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
+                              {/* Screenshot */}
+                              <motion.div
+                                initial={{ opacity: 0, x: -30 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.5, delay: 0.2 }}
+                              >
+                                <div className="relative">
+                                  <div
+                                    className="absolute inset-0 rounded-xl transform rotate-1 scale-[1.02] -z-10"
+                                    style={{
+                                      backgroundImage:
+                                        "linear-gradient(156.995deg, rgb(223, 234, 254) 7.9104%, rgb(241, 233, 251) 50%, rgb(244, 232, 246) 92.09%)",
+                                    }}
+                                  />
+                                  <motion.div
+                                    className="bg-white rounded-xl shadow-lg p-3 md:p-4 transform -rotate-[0.5deg]"
+                                    whileHover={{ scale: 1.02, rotate: 0 }}
+                                    transition={{ duration: 0.3 }}
+                                  >
+                                    <div className="rounded-lg overflow-hidden">
+                                      <img
+                                        src={exp.screenshot}
+                                        alt={exp.screenshotAlt}
+                                        className="w-full h-auto object-cover"
+                                      />
+                                    </div>
+                                  </motion.div>
+                                </div>
+                              </motion.div>
+
+                              {/* Details */}
+                              <motion.div
+                                initial={{ opacity: 0, x: 30 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.5, delay: 0.3 }}
+                              >
+                                {/* Bullet Points */}
+                                <ul className="space-y-3 font-['Inter',sans-serif] text-[#4a5565] text-sm md:text-base mb-5">
+                                  {exp.bullets.map((item, bIdx) => (
+                                    <motion.li
+                                      key={bIdx}
+                                      className="flex gap-3 items-start"
+                                      initial={{ opacity: 0, x: -15 }}
+                                      animate={{ opacity: 1, x: 0 }}
+                                      transition={{
+                                        duration: 0.4,
+                                        delay: 0.35 + bIdx * 0.08,
+                                      }}
+                                    >
+                                      <span
+                                        className="text-lg flex-shrink-0 leading-6"
+                                        style={{ color: exp.accentColor }}
+                                      >
+                                        •
+                                      </span>
+                                      <span className="leading-relaxed">
+                                        {item}
+                                      </span>
+                                    </motion.li>
+                                  ))}
+                                </ul>
+
+                                {/* Tags */}
+                                {exp.tags && (
+                                  <motion.div
+                                    className="flex flex-wrap gap-2 mb-5"
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.4, delay: 0.5 }}
+                                  >
+                                    {exp.tags.map((tag, tIdx) => (
+                                      <span
+                                        key={tIdx}
+                                        className="px-4 py-1.5 rounded-full text-xs md:text-sm font-['Inter',sans-serif] border"
+                                        style={{
+                                          color: exp.accentColor,
+                                          borderColor: `${exp.accentColor}40`,
+                                          backgroundColor: `${exp.accentColor}08`,
+                                        }}
+                                      >
+                                        {tag}
+                                      </span>
+                                    ))}
+                                  </motion.div>
+                                )}
+
+                                {/* Certificate Button */}
+                                {exp.certificateUrl && (
+                                  <motion.button
+                                    className="bg-[#101828] text-white px-5 py-2.5 rounded-full font-['Inter',sans-serif] text-sm shadow-lg hover:shadow-xl transition-shadow flex items-center gap-2 cursor-pointer"
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      window.open(exp.certificateUrl, "_blank");
+                                    }}
+                                  >
+                                    <svg
+                                      width="18"
+                                      height="18"
+                                      viewBox="0 0 20 20"
+                                      fill="none"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M7.5 15L12.5 10L7.5 5"
+                                        stroke="currentColor"
+                                        strokeWidth="2"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                      />
+                                    </svg>
+                                    Certificate
+                                  </motion.button>
+                                )}
+                              </motion.div>
+                            </div>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </motion.div>
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>

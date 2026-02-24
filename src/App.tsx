@@ -2472,16 +2472,16 @@ function Link() {
     e: React.MouseEvent<HTMLAnchorElement>,
   ) => {
     e.preventDefault();
+    e.stopPropagation();
     const element = document.getElementById("experience");
     if (element) {
-      const offsetTop = element.offsetTop - 80;
-      window.scrollTo({ top: offsetTop, behavior: "smooth" });
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
   return (
     <a
-      href="#experience"
+      href="javascript:void(0)"
       onClick={handleClick}
       className="relative shrink-0"
       data-name="Link"
@@ -2649,18 +2649,14 @@ function Header() {
               Home
             </a>
             <a
-              href="#experience"
+              href="javascript:void(0)"
               className="font-['Inter',sans-serif] text-[#364153] text-lg hover:text-[#7f56d9] transition-colors py-2"
               onClick={(e) => {
                 e.preventDefault();
                 const element =
                   document.getElementById("experience");
                 if (element) {
-                  const offsetTop = element.offsetTop - 80;
-                  window.scrollTo({
-                    top: offsetTop,
-                    behavior: "smooth",
-                  });
+                  element.scrollIntoView({ behavior: "smooth", block: "start" });
                 }
                 setMobileMenuOpen(false);
               }}
