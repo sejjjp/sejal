@@ -21,6 +21,7 @@ import imgJioMart from "figma:asset/89a3b169c18161b3b565d1e4949f65ec3e49fbfd.png
 import imgSamsungIrisWave from "figma:asset/b0e824ac2079e7c633755621ccff69652e5b1c8b.png";
 import imgDharmikVibesLogo from "figma:asset/473e1227a87653a6bdbf525cb38767c0b58c836f.png";
 import imgFinsFloating from "figma:asset/f56814f9c49b21026ae8c1c3181a6e7f23ca06e0.png";
+import imgAccentureLogo from "../imports/image-6.png";
 
 function DeviconIllustrator({
   className,
@@ -1423,34 +1424,34 @@ function FloatingElements5() {
         className="absolute border-2 border-[#f3f4f6] border-solid inset-0 pointer-events-none rounded-[24px] shadow-[0px_20px_25px_-5px_rgba(0,0,0,0.1),0px_8px_10px_-6px_rgba(0,0,0,0.1)]"
       />
 
-      {/* Dharmik Vibes Logo - centered */}
-      <div className="absolute left-1/2 top-[30px] transform -translate-x-1/2 w-[70px] h-[70px]">
+      {/* Accenture Logo - centered */}
+      <div className="absolute left-1/2 top-[28px] transform -translate-x-1/2 w-[80px] h-[60px]">
         <img
-          src={imgDharmikVibesLogo}
-          alt="Dharmik Vibes Logo"
+          src={imgAccentureLogo}
+          alt="Accenture Logo"
           className="w-full h-full object-contain"
         />
       </div>
 
-      {/* Title - Dharmik Vibes */}
-      <div className="absolute left-1/2 top-[115px] transform -translate-x-1/2 text-center">
-        <p className="font-['Inter',sans-serif] text-[#101828] text-[16px] font-normal whitespace-nowrap">
-          Dharmik Vibes
+      {/* Title - Accenture */}
+      <div className="absolute left-1/2 top-[105px] transform -translate-x-1/2 text-center">
+        <p className="font-['Inter',sans-serif] text-[#101828] text-[16px] font-semibold whitespace-nowrap">
+          Accenture
         </p>
       </div>
 
-      {/* Subtitle - Intern */}
-      <div className="absolute left-1/2 top-[145px] transform -translate-x-1/2 text-center">
-        <p className="font-['Inter',sans-serif] text-[#101828] text-[16px] font-normal whitespace-nowrap">
-          Intern
+      {/* Role */}
+      <div className="absolute left-1/2 top-[132px] transform -translate-x-1/2 text-center w-[200px]">
+        <p className="font-['Inter',sans-serif] text-[#101828] text-[13px] font-normal leading-tight text-center">
+          UX Arch Analyst Intern
         </p>
       </div>
 
-      {/* Description - Leadership & Strategy */}
-      <div className="absolute left-1/2 top-[175px] transform -translate-x-1/2 text-center">
-        <p className="font-['Inter',sans-serif] text-[#6a7282] text-[14px] font-normal whitespace-nowrap">
-          Leadership & Strategy
-        </p>
+      {/* Tag - Summer 2026 */}
+      <div className="absolute left-1/2 top-[170px] transform -translate-x-1/2 text-center">
+        <span className="inline-block px-3 py-1 rounded-full text-[11px] font-['Inter',sans-serif] font-medium text-[#a100ff] bg-[#a100ff12] border border-[#a100ff30] whitespace-nowrap">
+          Summer 2026
+        </span>
       </div>
     </div>
   );
@@ -2475,13 +2476,16 @@ function Link() {
     e.stopPropagation();
     const element = document.getElementById("experience");
     if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     }
   };
 
   return (
     <a
-      href="javascript:void(0)"
+      href="#"
       onClick={handleClick}
       className="relative shrink-0"
       data-name="Link"
@@ -2649,14 +2653,17 @@ function Header() {
               Home
             </a>
             <a
-              href="javascript:void(0)"
+              href="#"
               className="font-['Inter',sans-serif] text-[#364153] text-lg hover:text-[#7f56d9] transition-colors py-2"
               onClick={(e) => {
                 e.preventDefault();
                 const element =
                   document.getElementById("experience");
                 if (element) {
-                  element.scrollIntoView({ behavior: "smooth", block: "start" });
+                  element.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  });
                 }
                 setMobileMenuOpen(false);
               }}

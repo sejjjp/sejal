@@ -4,6 +4,10 @@ import imgScreenshot from "figma:asset/a408c3c294fd54db242b36f0be3223e6c56740ae.
 import imgDvPartnerLogo from "figma:asset/5c7e5d13a4551192be5c4f94808a36228eaece9c.png";
 import imgSociolinq from "figma:asset/ab611b5bd026b435a77726b8564d476a9012a8b2.png";
 import imgSociolinqLogo from "figma:asset/6cefd352121c5484acd9abe8ae237200cf863945.png";
+import imgEclipticonScreenshot from "../../imports/image-2.png";
+import imgEclipticonLogo from "../../imports/image.png";
+import imgPraxtoLogo from "../../imports/image-3.png";
+import imgPraxtoCertificate from "../../imports/image-4.png";
 import { ChevronDown } from "lucide-react";
 
 interface ExperienceData {
@@ -15,14 +19,37 @@ interface ExperienceData {
   logo?: string;
   logoAlt?: string;
   accentColor: string;
-  bullets: string[];
+  bullets: React.ReactNode[];
+  keyHighlight?: { title: string; body: string };
   tags?: string[];
   screenshot: string;
   screenshotAlt: string;
+  secondaryScreenshot?: string;
+  secondaryScreenshotAlt?: string;
   certificateUrl?: string;
 }
 
 const experiences: ExperienceData[] = [
+  {
+    id: "eclipticon",
+    role: "UI/UX Designer",
+    company: "Eclipticon Softwares Private Limited",
+    duration: "Feb 2026 - Present",
+    logo: imgEclipticonLogo,
+    logoAlt: "Eclipticon Logo",
+    accentColor: "#000000",
+    bullets: [
+      <><strong className="text-[#101828] font-semibold">Spearheaded the design</strong> of the <strong className="text-[#101828] font-semibold">'Plan a Hangout'</strong> feature for Frenley (MVP), focusing on <strong className="text-[#101828] font-semibold">user safety</strong> and <strong className="text-[#101828] font-semibold">platform compliance</strong>.</>,
+      <>Established the foundational <strong className="text-[#101828] font-semibold">Design System</strong> and <strong className="text-[#101828] font-semibold">brand identity</strong> to ensure visual consistency across the mobile application.</>,
+      <>Conducted <strong className="text-[#101828] font-semibold">deep-dive benchmarking</strong> and <strong className="text-[#101828] font-semibold">UI analysis</strong> to identify market gaps for Lawyer's Diary.</>,
+      <>Architected a <strong className="text-[#101828] font-semibold">novel, industry-first feature</strong> aimed at streamlining legal workflows — currently <strong className="text-[#101828] font-semibold">non-existent in competing applications</strong>.</>,
+      <>Bridged complex backend logic with <strong className="text-[#101828] font-semibold">human-centric UI</strong> to deliver <strong className="text-[#101828] font-semibold">intuitive user journeys</strong> for diverse user bases.</>,
+    ],
+    tags: ["MVP Strategy", "UI Analysis", "Design Systems"],
+    screenshot: imgEclipticonScreenshot,
+    screenshotAlt: "Eclipticon Softwares Projects Screenshot",
+    certificateUrl: "https://drive.google.com/file/d/1JUyVLbSA8CZ4ARRc5HNUvsuZwV_KPmZJ/view?usp=sharing",
+  },
   {
     id: "dharmik",
     role: "UX Designer Intern",
@@ -33,11 +60,12 @@ const experiences: ExperienceData[] = [
     logoAlt: "Dharmik Vibes Logo",
     accentColor: "#E87A2D",
     bullets: [
-      "Conducted extensive user research, personas, and journey mapping for spiritual travel.",
-      "Designed clear Information Architecture and interactive wireframes to simplify navigation.",
-      "Created intuitive UI for AI-driven recommendation engines.",
-      "Enhanced brand identity with aesthetically aligned UI elements and color systems.",
+      <>Conducted extensive <strong className="text-[#E87A2D] font-semibold">user research</strong>, <strong className="text-[#E87A2D] font-semibold">personas</strong>, and <strong className="text-[#E87A2D] font-semibold">journey mapping</strong> for a spiritual travel platform.</>,
+      <>Designed clear <strong className="text-[#E87A2D] font-semibold">Information Architecture</strong> and <strong className="text-[#E87A2D] font-semibold">interactive wireframes</strong> to simplify navigation and reduce user drop-off.</>,
+      <>Created <strong className="text-[#E87A2D] font-semibold">intuitive UI</strong> for <strong className="text-[#E87A2D] font-semibold">AI-driven recommendation engines</strong>, making complex suggestions feel effortless.</>,
+      <>Enhanced <strong className="text-[#E87A2D] font-semibold">brand identity</strong> with aesthetically aligned <strong className="text-[#E87A2D] font-semibold">UI elements</strong> and <strong className="text-[#E87A2D] font-semibold">color systems</strong> to reinforce brand recall.</>,
     ],
+    tags: ["User Research", "AI/UX Design", "Brand Identity"],
     screenshot: imgScreenshot,
     screenshotAlt: "Dharmik Vibes Project Screenshot",
     certificateUrl:
@@ -47,23 +75,43 @@ const experiences: ExperienceData[] = [
     id: "sociolinq",
     role: "UI/UX Design Intern",
     company: "SociolinQ Technologies Private Limited",
-    duration: "Feb 2026 - Feb 2026",
+    duration: "Feb 2026 - Mar 2026",
     logo: imgSociolinqLogo,
     logoAlt: "SociolinQ Logo",
     accentColor: "#4B50B6",
     bullets: [
-      "Designed a centralized HRMS dashboard featuring dynamic editing modules for 'Employee Central'.",
-      "Simplified complex admin workflows into intuitive, easy-to-navigate user flows.",
-      "Expanded the internal Design System with scalable components to accelerate developer handoff.",
+      <>Designed a <strong className="text-[#4B50B6] font-semibold">centralized HRMS dashboard</strong> featuring <strong className="text-[#4B50B6] font-semibold">dynamic editing modules</strong> for 'Employee Central'.</>,
+      <>Simplified <strong className="text-[#4B50B6] font-semibold">complex admin workflows</strong> into <strong className="text-[#4B50B6] font-semibold">intuitive, easy-to-navigate user flows</strong> that cut task completion time.</>,
+      <>Expanded the internal <strong className="text-[#4B50B6] font-semibold">Design System</strong> with <strong className="text-[#4B50B6] font-semibold">scalable components</strong> to accelerate developer handoff.</>,
     ],
     tags: ["HRMS Design", "Design Systems", "Complex Workflows"],
     screenshot: imgSociolinq,
     screenshotAlt: "SociolinQ HRMS Employee Central Dashboard",
   },
+  {
+    id: "praxto",
+    role: "User Experience Designer",
+    company: "Praxto Designs",
+    duration: "Jun 2025 - Oct 2025",
+    logo: imgPraxtoLogo,
+    logoAlt: "Praxto Designs Logo",
+    accentColor: "#6B4CE6",
+    bullets: [
+      <><strong className="text-[#6B4CE6] font-semibold">Led end-to-end UX/UI</strong> for the company portfolio — shaping its <strong className="text-[#6B4CE6] font-semibold">visual identity</strong> and <strong className="text-[#6B4CE6] font-semibold">navigation structure</strong> from scratch.</>,
+      <>Delivered <strong className="text-[#6B4CE6] font-semibold">multiple client projects</strong> end-to-end, including <strong className="text-[#6B4CE6] font-semibold">high-fidelity mockups</strong> aligned to user goals and business objectives.</>,
+      <>Coordinated with <strong className="text-[#6B4CE6] font-semibold">designers, developers, and content creators</strong> to transform design vision into <strong className="text-[#6B4CE6] font-semibold">polished web experiences</strong>.</>,
+      <>Translated <strong className="text-[#6B4CE6] font-semibold">complex client requirements</strong> into <strong className="text-[#6B4CE6] font-semibold">intuitive interfaces</strong> — balancing aesthetics with usability across diverse industries.</>,
+      <>Applied <strong className="text-[#6B4CE6] font-semibold">wireframing</strong>, <strong className="text-[#6B4CE6] font-semibold">prototyping</strong>, and <strong className="text-[#6B4CE6] font-semibold">client collaboration</strong> to consistently deliver on-time, on-brief design solutions.</>,
+    ],
+    tags: ["User Experience (UX)", "User Flow Mapping", "Client Projects"],
+    screenshot: imgPraxtoCertificate,
+    screenshotAlt: "Praxto Designs Internship Certificate",
+    certificateUrl: "https://drive.google.com/file/d/YOUR_PRAXTO_CERTIFICATE_ID/view?usp=sharing",
+  },
 ];
 
 export function ProfessionalExperience() {
-  const [activeId, setActiveId] = useState<string>("dharmik");
+  const [activeId, setActiveId] = useState<string>("eclipticon");
 
   return (
     <div
@@ -292,34 +340,85 @@ export function ProfessionalExperience() {
                             />
 
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
-                              {/* Screenshot */}
+                              {/* Screenshot(s) */}
                               <motion.div
                                 initial={{ opacity: 0, x: -30 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.5, delay: 0.2 }}
                               >
-                                <div className="relative">
-                                  <div
-                                    className="absolute inset-0 rounded-xl transform rotate-1 scale-[1.02] -z-10"
-                                    style={{
-                                      backgroundImage:
-                                        "linear-gradient(156.995deg, rgb(223, 234, 254) 7.9104%, rgb(241, 233, 251) 50%, rgb(244, 232, 246) 92.09%)",
-                                    }}
-                                  />
-                                  <motion.div
-                                    className="bg-white rounded-xl shadow-lg p-3 md:p-4 transform -rotate-[0.5deg]"
-                                    whileHover={{ scale: 1.02, rotate: 0 }}
-                                    transition={{ duration: 0.3 }}
-                                  >
-                                    <div className="rounded-lg overflow-hidden">
-                                      <img
-                                        src={exp.screenshot}
-                                        alt={exp.screenshotAlt}
-                                        className="w-full h-auto object-cover"
+                                {exp.secondaryScreenshot ? (
+                                  <div className="grid grid-cols-2 gap-4">
+                                    {/* Left Image */}
+                                    <div className="relative">
+                                      <div
+                                        className="absolute inset-0 rounded-xl transform rotate-1 scale-[1.02] -z-10"
+                                        style={{
+                                          backgroundImage:
+                                            "linear-gradient(156.995deg, rgb(223, 234, 254) 7.9104%, rgb(241, 233, 251) 50%, rgb(244, 232, 246) 92.09%)",
+                                        }}
                                       />
+                                      <motion.div
+                                        className="bg-white rounded-xl shadow-lg p-2 md:p-3 transform -rotate-[0.5deg]"
+                                        whileHover={{ scale: 1.02, rotate: 0 }}
+                                        transition={{ duration: 0.3 }}
+                                      >
+                                        <div className="rounded-lg overflow-hidden">
+                                          <img
+                                            src={exp.secondaryScreenshot}
+                                            alt={exp.secondaryScreenshotAlt}
+                                            className="w-full h-auto object-cover"
+                                          />
+                                        </div>
+                                      </motion.div>
                                     </div>
-                                  </motion.div>
-                                </div>
+                                    {/* Right Image */}
+                                    <div className="relative">
+                                      <div
+                                        className="absolute inset-0 rounded-xl transform -rotate-1 scale-[1.02] -z-10"
+                                        style={{
+                                          backgroundImage:
+                                            "linear-gradient(156.995deg, rgb(223, 234, 254) 7.9104%, rgb(241, 233, 251) 50%, rgb(244, 232, 246) 92.09%)",
+                                        }}
+                                      />
+                                      <motion.div
+                                        className="bg-white rounded-xl shadow-lg p-2 md:p-3 transform rotate-[0.5deg]"
+                                        whileHover={{ scale: 1.02, rotate: 0 }}
+                                        transition={{ duration: 0.3 }}
+                                      >
+                                        <div className="rounded-lg overflow-hidden">
+                                          <img
+                                            src={exp.screenshot}
+                                            alt={exp.screenshotAlt}
+                                            className="w-full h-auto object-cover"
+                                          />
+                                        </div>
+                                      </motion.div>
+                                    </div>
+                                  </div>
+                                ) : (
+                                  <div className="relative">
+                                    <div
+                                      className="absolute inset-0 rounded-xl transform rotate-1 scale-[1.02] -z-10"
+                                      style={{
+                                        backgroundImage:
+                                          "linear-gradient(156.995deg, rgb(223, 234, 254) 7.9104%, rgb(241, 233, 251) 50%, rgb(244, 232, 246) 92.09%)",
+                                      }}
+                                    />
+                                    <motion.div
+                                      className="bg-white rounded-xl shadow-lg p-3 md:p-4 transform -rotate-[0.5deg]"
+                                      whileHover={{ scale: 1.02, rotate: 0 }}
+                                      transition={{ duration: 0.3 }}
+                                    >
+                                      <div className="rounded-lg overflow-hidden">
+                                        <img
+                                          src={exp.screenshot}
+                                          alt={exp.screenshotAlt}
+                                          className="w-full h-auto object-cover"
+                                        />
+                                      </div>
+                                    </motion.div>
+                                  </div>
+                                )}
                               </motion.div>
 
                               {/* Details */}
